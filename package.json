@@ -1,14 +1,29 @@
 {
   "name": "stubbing",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "JSON REST API for NodeJS from file system.",
   "main": "index.js",
+  "keywords": [
+    "stub",
+    "stubb",
+    "mock",
+    "fake",
+    "api",
+    "rest",
+    "server",
+    "file",
+    "system",
+    "path"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/polst/stubbing.git"
+  },
+  "bugs": {
+    "url": "http://github.com/brunch/brunch/issues"
   },
   "dependencies": {
     "globs": "*",
@@ -22,5 +37,6 @@
     "stubbing": "./bin/stubbing"
   },
   "author": "Paul Apostol",
-  "license": "MIT"
+  "license": "MIT",
+  "readmeFilename": "README.md"
 }

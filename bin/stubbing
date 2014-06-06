@@ -8,7 +8,7 @@ var stubbing = require('../index');
 
 var options = {
     baseDir: 'services',
-    timeout: 0, //2000
+    timeout: 0,
     cors: true,
     port: 3000
 };
