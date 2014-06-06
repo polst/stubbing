@@ -1,15 +1,22 @@
 #!/usr/bin/env node
 
+var argv = require('optimist').argv;
+
 var express = require('express');
 var app = express();
 
 var options = {
     baseDir: 'services',
     timeout: 0, //2000
-    cors: true
+    cors: true,
+    port: 3000
 };
 
 require('../index')(options, function(hook) {
+  if(argv.p) options.port = argv.p;
+  if(argv.t) options.timeout = argv.t;
+  if(argv.d) options.baseDir = argv.d;
+
     if(options.cors) {
       app.all('*', function (req, res, next) {
         res.header("Access-Control-Allow-Credentials", true);
@@ -24,6 +31,6 @@ require('../index')(options, function(hook) {
       });
     }
     app.use(hook);
-    app.listen(3000);
-    console.log('Up and running!');
+    app.listen(options.port);
+    console.log('Up and running! Port: ' + options.port );
 });
