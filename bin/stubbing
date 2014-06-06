@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var express = require('express');
+var app = express();
+
+var options = {
+    baseDir: 'services',
+    timeout: 0, //2000
+    cors: true
+};
+
+require('./index')(options, function(hook) {
+    if(options.cors) {
+      app.all('*', function (req, res, next) {
+        res.header("Access-Control-Allow-Credentials", true);
+        res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+        res.header("Access-Control-Allow-Origin", req.headers.origin);
+        res.header("Access-Control-Expose-Headers", "");
+        res.header("Access-Control-Allow-Headers", req.headers['access-control-request-headers']);
+        if (req.method === 'OPTIONS')
+          res.send(200);
+        else
+          next();
+      });
+    }
+    app.use(hook);
+    app.listen(3000);
+    console.log('Up and running!');
+});
