@@ -9,7 +9,7 @@ var options = {
     cors: true
 };
 
-require('./index')(options, function(hook) {
+require('../index')(options, function(hook) {
     if(options.cors) {
       app.all('*', function (req, res, next) {
         res.header("Access-Control-Allow-Credentials", true);
