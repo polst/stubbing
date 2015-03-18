@@ -7,7 +7,7 @@ var app = express();
 var stubbing = require('../index');
 
 var options = {
-    baseDir: 'services',
+    baseDir: './services',
     timeout: 0,
     cors: true,
     port: 3000
@@ -19,23 +19,5 @@ if(argv.d) options.baseDir = argv.d;
 
 stubbing(
   options,
-  function(hook) {
-
-      if(options.cors) {
-        app.all('*', function (req, res, next) {
-          res.header("Access-Control-Allow-Credentials", true);
-          res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-          res.header("Access-Control-Allow-Origin", req.headers.origin);
-          res.header("Access-Control-Expose-Headers", "");
-          res.header("Access-Control-Allow-Headers", req.headers['access-control-request-headers']);
-          if (req.method === 'OPTIONS')
-            res.send(200);
-          else
-            next();
-        });
-      }
-      app.use(hook);
-      app.listen(options.port);
-      console.log('Up and running! Port: ' + options.port );
-  }
+  stubbing.callback
 );
