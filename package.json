@@ -1,6 +1,6 @@
 {
   "name": "stubbing",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "JSON REST API for NodeJS from file system.",
   "main": "index.js",
   "keywords": [
@@ -23,7 +23,7 @@
     "url": "https://github.com/polst/stubbing.git"
   },
   "bugs": {
-    "url": "http://github.com/brunch/brunch/issues"
+    "url": "http://github.com/polst/stubbing/issues"
   },
   "dependencies": {
     "globs": "0.1.2",
