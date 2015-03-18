@@ -1,6 +1,6 @@
 {
   "name": "stubbing",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "JSON REST API for NodeJS from file system.",
   "main": "index.js",
   "keywords": [
