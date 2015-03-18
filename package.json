@@ -26,12 +26,12 @@
     "url": "http://github.com/brunch/brunch/issues"
   },
   "dependencies": {
-    "globs": "*",
-    "lodash": "*",
-    "routes": "*",
-    "express": "*",
-    "optimist": "*",
-    "loggy": "*"
+    "globs": "0.1.2",
+    "lodash": "2.4.1",
+    "i40": "1.3.1",
+    "express": "4.12.3",
+    "optimist": "0.6.1",
+    "loggy": "0.2.0"
   },
   "bin": {
     "stubbing": "./bin/stubbing"
