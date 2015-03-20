@@ -4,7 +4,21 @@ stubbing
 #JSON REST API from file system.
 
 Inspired by [Stubb](https://github.com/knuton/stubb)
+
 Compatible with browser sync.
+
+    var api = stubbing({
+      baseDir: './services',
+      timeout: 0,
+      cors: false,
+      middleware: true
+    });
+    var cfg = { ... };
+    cfg.middleware = function(req, res, next) {
+        api(req, res, next);
+
+    };
+    return browserSync(cfg);
 
 ## command line parameters
 
