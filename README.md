@@ -4,6 +4,7 @@ stubbing
 #JSON REST API from file system.
 
 Inspired by [Stubb](https://github.com/knuton/stubb)
+Compatible with browser sync.
 
 ## command line parameters
 

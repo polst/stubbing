@@ -45,9 +45,5 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "readme": "stubbing\r\n========\r\n\r\n#JSON REST API from file system.\r\n\r\nInspired by [Stubb](https://github.com/knuton/stubb)\r\n\r\n## command line parameters\r\n\r\n    -p  server port\r\n    -t  response timeout\r\n    -d  directory where the api is defined\r\n\r\n## option object when used as module\r\n\r\n    {\r\n      baseDir: 'foo',\r\n      timeout: 0\r\n    }\r\n\r\n## javascript over json\r\n\r\nIf a certain JSON file must be handled, create a JS file with same name in the same directory.\r\nThe server will load the JS file and the JSON file is ignored.\r\n\r\nThe JS file should be like this:\r\n\r\n    var fs = require('fs'),\r\n        path = require('path');\r\n\r\n    var file = path.resolve(__dirname,'GET.json');\r\n\r\n    module.exports = function(params, req, ok) {\r\n        fs.readFile(file, function (err, data) {\r\n            if (err) {\r\n                ok('Error: ' + err, null)\r\n            }\r\n\r\n            var json = JSON.parse('' + data);\r\n\r\n            return ok(null, json);\r\n        });\r\n    };\r\n\r\n\r\nso, a normal NodeJS stuff.\r\n\r\n## Response Sequences\r\n\r\nYes, are present, like in Stubb link above, needs more work as there are some untreated cases.\r\n\r\n## Stubb differences\r\n\r\nAll files must have extensions: JSON and JS.\r\n\r\nCORS by default.\r\n\r\nReturned headers are not configurable, yet.\r\n\r\nParameters for URL are defined with a `_` in front of the name, NO need for another one at the end.\r\n\r\n## TODO\r\n\r\nOn error improve the response code. - Today the response is 500, in some cases a 404 is more appropriate.\r\n",
-  "homepage": "https://github.com/polst/stubbing",
-  "_id": "stubbing@0.0.7",
-  "_shasum": "250baf3457031ed8ae3652f3a721f48688f9fd33",
-  "_resolved": "git+https://github.com/polst/stubbing#e69fd5c90e5c9a9fc2e8e344f0e44de2520154e3",
-  "_from": "stubbing@git+https://github.com/polst/stubbing"
+  "homepage": "https://github.com/polst/stubbing"
 }
